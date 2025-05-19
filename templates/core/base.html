@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media</title>
+    <title>Instagram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png">
+    
+
+    
     <style>
         * {
             margin: 0;
@@ -13,38 +18,61 @@
         }
         
         body {
-            background-color: #f0f2f5;
+            background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
         }
         
         .navbar {
-            background-color: #1877f2;
-            color: white;
+             background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+             position: relative;
+            color: rgb(39, 35, 35);
             padding: 10px 20px;
+            margin-bottom: 55px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 10;
         }
+        .navbar img {
+            padding: 0;
+             margin: 6px 0 0 0;
+              width: 25px;
+            height: 25px;
+}
+
+       .brand-text {
+            
+             font-size: 22px;
+             background-color: #ffffff;
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+            background-clip: text; 
+            text-decoration: none;
+}
+
         
         .navbar a {
-            color: white;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             margin-left: 15px;
         }
         
         .navbar a:hover {
             text-decoration: underline;
+            
         }
         
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
+            
         }
         
         .card {
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
             padding: 15px;
         }
@@ -124,11 +152,13 @@
             background-color: #e2e3e5;
             color: #383d41;
         }
-        /* Add to your existing CSS or create new file */
-.container {
-    max-width: 800px;
+       
+ .container {
+     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+   
+
 }
 
 .requests-section {

@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
@@ -21,4 +22,7 @@ urlpatterns = [
     path('remove-friend/<str:username>/', views.remove_friend, name='remove_friend'),
      path('friend-requests/', views.friend_requests_view, name='friend_requests'),
      path('friends/<str:username>/', views.friends_list_view, name='friends_list'),
+
+    path('post/delete/<int:post_id>/', views.delete_post, name='delete_post'),
+
 ]

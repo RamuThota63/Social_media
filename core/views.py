@@ -318,3 +318,10 @@ def remove_friend(request, username):
         messages.info(request, f"You are no longer friends with {friend.username}")
     
     return redirect('profile', username=username)
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user == post.user:
+        post.delete()
+    return redirect('profile', username=request.user.username)

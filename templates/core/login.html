@@ -1,19 +1,102 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<style>
+    body {
+         background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+      .card {
+        max-width: 450px;
+        margin:auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        font-weight: lighter;
+        margin-bottom: 30px;
+        color: #000000;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    p {
+        text-align: center;
+        margin-top: 20px;
+        color: #555;
+    }
+
+    p a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <div class="card">
-    <h2>Login</h2>
+    <h2>Instagram</h2>
     <form method="POST">
         {% csrf_token %}
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn">Login</button>
     </form>
     <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
 </div>

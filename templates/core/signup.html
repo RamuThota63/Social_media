@@ -1,35 +1,130 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<style>
+    body {
+         background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card {
+        max-width: 500px;
+        margin:auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        font-weight: lighter;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+        font-size: 14px;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(to right, #007bff, #0056b3);
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background: linear-gradient(to right, #0056b3, #003f8a);
+    }
+
+    p {
+        text-align: center;
+        margin-top: 20px;
+        color: #555;
+    }
+
+    p a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    p a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+        .card {
+            margin: 30px 15px;
+            padding: 25px;
+        }
+    }
+</style>
+
 <div class="card">
-    <h2>Sign Up</h2>
+    <h2>Instagram</h2>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
         </div>
         <div class="form-group">
-            <label for="password2">Confirm Password</label>
-            <input type="password" id="password2" name="password2" required>
+            <label for="password2"></label>
+            <input type="password" id="password2" name="password2" placeholder="Re-enter the Password" required>
         </div>
         <div class="form-group">
-            <label for="bio">Bio</label>
-            <textarea id="bio" name="bio" rows="3"></textarea>
+            <label for="bio"></label>
+            <textarea id="bio" name="bio" rows="1" placeholder="BIO"></textarea>
         </div>
         <div class="form-group">
             <label for="profile_pic">Profile Picture</label>
             <input type="file" id="profile_pic" name="profile_pic" accept="image/jpeg,image/png">
         </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn">Sign Up</button>
     </form>
     <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 </div>

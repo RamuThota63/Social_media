@@ -1,9 +1,50 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<div class="card">
-    <h2>Welcome to Social Media</h2>
-    <p>See what's happening with your friends</p>
+
+<style>
+    .welcome-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 30px 0;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .user-profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    .welcome-text h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .welcome-text p {
+        font-size: 16px;
+        color: #666;
+    }
+</style>
+
+<div class="welcome-container">
+    {% if user.profile_pic %}
+        <img src="{{ user.profile_pic.url }}" alt="{{ user.username }}" class="user-profile-pic">
+    {% endif %}
+
+    <div class="welcome-text">
+        <h2>Welcome to Instagram, {{ user.username }}!</h2>
+        <p>See what's happening with your friends</p>
+    </div>
 </div>
 
 {% for post in posts %}
@@ -13,4 +54,5 @@
         <p>No posts to show. Follow some people or create your own post!</p>
     </div>
 {% endfor %}
+
 {% endblock %}
